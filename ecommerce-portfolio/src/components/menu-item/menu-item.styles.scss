@@ -1,26 +1,19 @@
-.homepage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 80px;
-}
-
-.directory-menu {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
 .menu-item {
   min-width: 30%;
   height: 240px;
   flex: 1 1 auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   border: 1px solid black;
   margin: 0 7.5px 15px;
+  transition: all 2s ease;
+  overflow: hidden;
+
+  &.large{
+    height: 380px;
+  }
 
   &:first-child {
     margin-right: 7.5px;
@@ -30,14 +23,41 @@
     margin-left: 7.5px;
   }
 
+  & .background-image{
+    width: 100%;
+    height:100%;
+    background-position: center;
+    background-size: cover;
+    transition: all 1s ease;
+   
+  }
+
+  &:hover{
+    cursor: pointer;
+
+    & .background-image{
+      transition: all 4s ease;
+      transform: scale(1.1);
+    }
+
+    .content{
+      opacity: .9;
+      transition: all 1s ease;
+    }
+  }
+
   .content {
     height: 90px;
     padding: 0 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     border: 1px solid black;
+    background-color:#fff;
+    opacity: .7;
+    transition: all 1s ease;
+    position: absolute;
+  
 
     .title {
       font-weight: bold;
